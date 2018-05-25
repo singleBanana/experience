@@ -1,16 +1,16 @@
-1:RedisÖÐstringµÄÊý¾Ý½á¹¹
-RedisÃ»ÓÐÊ¹ÓÃCÖÐµÄ´«Í³µÄ×Ö·û´®£¬¶øÊÇ×Ô¼º¹¹½¨ÁËÒ»ÖÖÃûÎª¼òµ¥¶¯Ì¬×Ö·û´®£¨simple dynamic string, sds£©µÄ³éÏóÀàÐÍ£¬²¢½«sdsÓÃ×÷redisµÄÄ¬ÈÏ×Ö·û´®±íÊ¾¡£
-
-SDSÊôÐÔ
+# Redisä¸­stringçš„æ•°æ®ç»“æž„
+Redisæ²¡æœ‰ä½¿ç”¨Cä¸­çš„ä¼ ç»Ÿçš„å­—ç¬¦ä¸²ï¼Œè€Œæ˜¯è‡ªå·±æž„å»ºäº†ä¸€ç§åä¸ºç®€å•åŠ¨æ€å­—ç¬¦ä¸²ï¼ˆsimple dynamic string, sdsï¼‰çš„æŠ½è±¡ç±»åž‹ï¼Œå¹¶å°†sdsç”¨ä½œredisçš„é»˜è®¤å­—ç¬¦ä¸²è¡¨ç¤ºã€‚
+```
+SDSå±žæ€§
 struct sdshdr{
-    int len;  // ¼ÇÂ¼ÁËsdsËù±£ÁôµÄ×Ö·û´®³¤¶È
-    int free;  // ¼ÇÂ¼ÁËbufÊý×éÖÐÎ´Ê¹ÓÃµÄ×Ö½ÚÊýÁ¿
-    char buf[];    ×Ö½ÚÊý×é£¬ÓÃÓÚ±£´æ×Ö·û´®¡£
+    int len;  // è®°å½•äº†sdsæ‰€ä¿ç•™çš„å­—ç¬¦ä¸²é•¿åº¦
+    int free;  // è®°å½•äº†bufæ•°ç»„ä¸­æœªä½¿ç”¨çš„å­—èŠ‚æ•°é‡
+    char buf[];    å­—èŠ‚æ•°ç»„ï¼Œç”¨äºŽä¿å­˜å­—ç¬¦ä¸²ã€‚
 };
-
-ºÃ´¦£º
-1£º¶Å¾øÁË»º³åÇøÒç³ö
-2£º¼õÉÙÐÞ¸Ä×Ö·û´®ÊÇ´øÀ´µÄÄÚ´æÖØÐÂ·ÖÅä´ÎÊý
-3£º¶þ½øÖÆ°²È«
-4£º¼æÈÝ²¿·ÖC×Ö·û´®º¯Êý
+```
+å¥½å¤„ï¼š
+* 1ï¼šæœç»äº†ç¼“å†²åŒºæº¢å‡º
+* 2ï¼šå‡å°‘ä¿®æ”¹å­—ç¬¦ä¸²æ˜¯å¸¦æ¥çš„å†…å­˜é‡æ–°åˆ†é…æ¬¡æ•°
+* 3ï¼šäºŒè¿›åˆ¶å®‰å…¨
+* 4ï¼šå…¼å®¹éƒ¨åˆ†Cå­—ç¬¦ä¸²å‡½æ•°
 
